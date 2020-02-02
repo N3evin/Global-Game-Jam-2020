@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [Serializable]
 public class ConsoleData
@@ -48,10 +49,11 @@ public class gameController : MonoBehaviour
         "up_trigger_enable",
         "down_button_true",
         "interaction_triggered",
-        "toggle_npc_dialogue",
-        "key1_spawn_ok",
-        "portal_collider=true",
-        "npc_male_1"
+        "npc_dialogue=true",
+        "obj_door=unlock",
+        "npc_greg=true",
+        "enable_collider=false",
+        "pos_x=100,pos_y=100"
     };
 
     [SerializeField]
@@ -121,6 +123,11 @@ public class gameController : MonoBehaviour
             else if (item.getId() == inputText.Trim((char)8203) && item.getUnlock())
             {
                 result = 2;
+            }
+
+            if(inputText.Trim((char)8203) == "npc_evilking.pos_x=100,pos_y=100")
+            {
+                SceneManager.LoadScene("endGame", LoadSceneMode.Single);
             }
 
         }
