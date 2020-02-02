@@ -53,11 +53,18 @@ public class gameController : MonoBehaviour
         "obj_door=unlock",
         "npc_greg=true",
         "enable_collider=false",
-        "pos_x=100,pos_y=100"
+        "npc_evilking.pos_x=100,pos_y=100"
     };
 
     [SerializeField]
     private List<ConsoleData> consoleDataList = new List<ConsoleData>();
+
+    [SerializeField]
+    private bool devPanelEnabled = false;
+    [SerializeField]
+    private GameObject devPanel;
+    [SerializeField]
+    private GameObject helpText;
 
     private void init()
     {   
@@ -73,6 +80,7 @@ public class gameController : MonoBehaviour
     {
         init();
         this.consoleTextBox.transform.gameObject.SetActive(enableConsole);
+        this.devPanel.SetActive(this.devPanelEnabled);
     }
 
     // Update is called once per frame
@@ -82,6 +90,9 @@ public class gameController : MonoBehaviour
         {
             this.triggerConsoleBox();
         }
+
+
+        this.devPanelController();
     }
 
     // trigger the console box.
@@ -133,5 +144,21 @@ public class gameController : MonoBehaviour
         }
 
         return result;
+    }
+
+    private void devPanelController()
+    {
+        if (Input.GetKeyDown(KeyCode.F1))
+        {
+            string result = "";
+            foreach (ConsoleData item in this.consoleDataList)
+            {
+                result += item.getId() + ": " + item.getUnlock() + "\n";
+            }
+                this.helpText.GetComponent<UnityEngine.UI.Text>().text = result;
+
+            this.devPanelEnabled = !this.devPanelEnabled;
+            this.devPanel.SetActive(this.devPanelEnabled);
+        }
     }
 }

@@ -146,8 +146,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.35, y: -59}
-  m_SizeDelta: {x: 514.7, y: 174.4}
+  m_AnchoredPosition: {x: 20.7, y: -40}
+  m_SizeDelta: {x: 468.6, y: 174.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &25986612
 MonoBehaviour:
@@ -182,9 +182,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'The Game Is Never Complete!
-
-    Credits: Louis Png, Kenneth Kum and Nevin Vu'
+  m_Text: "The Game Is Never Complete!\r\nGame Designer: Louis Png & Kenneth Kum\r\nArtist:
+    Yang Da\r\nProgrammer: Nevin Vu"
 --- !u!222 &25986613
 CanvasRenderer:
   m_ObjectHideFlags: 0
